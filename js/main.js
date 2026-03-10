@@ -1,14 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navbar Scroll Effect
+    // Cinematic Navbar State
     const navbar = document.querySelector('.navbar');
+    const heroSection = document.querySelector('.hero');
     
-    window.addEventListener('scroll', () => {
+    // Check initial scroll position
+    const checkScroll = () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
+            document.body.classList.add('scrolled-down');
         } else {
             navbar.classList.remove('scrolled');
+            document.body.classList.remove('scrolled-down');
         }
-    });
+    };
+    
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Run on load
 
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
@@ -32,20 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Reveal Animation (Foundation mapping for later)
+    // Semantic Scroll Reveal Animation using Intersection Observer
     const revealElements = document.querySelectorAll('.reveal');
     
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target);
+                observer.unobserve(entry.target); // Run animation only once
             }
         });
     };
 
     const revealOptions = {
-        threshold: 0.1,
+        threshold: 0.15, // Trigger when 15% of element is visible
         rootMargin: "0px 0px -50px 0px"
     };
 
