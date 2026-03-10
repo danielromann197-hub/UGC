@@ -217,11 +217,21 @@ body:not(.scrolled-down) .menu-toggle span { background-color: var(--color-white
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    z-index: 1002;
+}
+
+.nav-logo-img {
+    height: 70px;
+    width: auto;
+    mix-blend-mode: multiply; /* Removes white background */
+    transition: var(--transition-fast);
+}
+
+/* Adjust brightness on dark top background if needed, but multiply is usually safe */
+body:not(.scrolled-down) .nav-logo-img {
+    filter: brightness(1.2) contrast(1.2); 
 }
 
 .nav-links {
@@ -723,10 +733,15 @@ body:not(.scrolled-down) .menu-toggle span { background-color: var(--color-white
 }
 
 .footer-logo {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    display: inline-block;
     margin-bottom: 0.5rem;
+}
+
+.footer-logo-img {
+    height: 90px;
+    width: auto;
+    mix-blend-mode: multiply; /* Removes white background */
+    filter: contrast(1.1);
 }
 
 .footer-tagline {
