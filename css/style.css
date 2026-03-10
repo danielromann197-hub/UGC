@@ -416,8 +416,34 @@ body:not(.scrolled-down) .nav-logo-img {
 }
 
 .about-container {
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    padding-right: 2rem;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    object-fit: cover;
+    box-shadow: -15px 15px 0px rgba(194, 126, 106, 0.15); /* Soft terracotta shadow */
+}
+
+@media (max-width: 992px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .about-image {
+        padding-right: 0;
+        order: -1; /* Image appears first on mobile */
+    }
 }
 
 .about-text {
