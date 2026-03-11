@@ -427,15 +427,36 @@ body:not(.scrolled-down) .nav-logo-img {
     padding-right: 2rem;
 }
 
-.slideshow {
-    position: relative;
+.about-img {
     width: 100%;
-    aspect-ratio: 3/4;
-    overflow: hidden;
+    height: auto;
+    max-height: 800px;
+    object-fit: cover;
     box-shadow: -15px 15px 0px rgba(194, 126, 106, 0.15); /* Soft terracotta shadow */
 }
 
-.about-img.slide {
+/* ==========================================================================
+   4.5 Lookbook Carousel
+   ========================================================================== */
+.lookbook {
+    background-color: var(--color-white);
+    padding: 6rem 0;
+}
+
+.lookbook-carousel-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.slideshow-standalone {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16; /* Portrait ratio for full body images */
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.lookbook-slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -446,7 +467,7 @@ body:not(.scrolled-down) .nav-logo-img {
     transition: opacity 1.5s ease-in-out;
 }
 
-.about-img.slide.active {
+.lookbook-slide.active {
     opacity: 1;
 }
 

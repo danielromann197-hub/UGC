@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // About Section Slideshow
-    const slides = document.querySelectorAll('.slideshow .slide');
+    // Lookbook Section Slideshow
+    const slides = document.querySelectorAll('.slideshow-standalone .lookbook-slide');
     if (slides.length > 0) {
         let currentSlide = 0;
         setInterval(() => {
