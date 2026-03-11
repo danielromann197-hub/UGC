@@ -61,4 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         revealObserver.observe(el);
     });
+
+    // About Section Slideshow
+    const slides = document.querySelectorAll('.slideshow .slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000); // Change image every 4 seconds
+    }
 });
